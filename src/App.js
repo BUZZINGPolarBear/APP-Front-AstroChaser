@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Button } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 
 import MyButton from './ButtonTest';
 
@@ -7,10 +7,10 @@ export default function App() {
   console.log("React Native App Started!");
   return (
     <View style={styles.container}>
-      <Text style={{color: 'blue'}}>Hello world!</Text>
       <StatusBar style="auto" />
-      <Button title="Button" onPress={() => alert('Button Clicked!!!')} />
-      <MyButton/>
+      <MyButton title="test1 Button" onPress ={()=> {alert('test1 Pressed.')}}/>
+      <MyButton title="test2 Button" onPress ={()=> {alert('test2 Pressed.')}}>children</MyButton>
+      <MyButton onPress ={()=> {alert('test1 Pressed.')}}>test3 Button</MyButton>
     </View>
   );
 }

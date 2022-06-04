@@ -1,14 +1,18 @@
 import React from 'react';
 import {TouchableOpacity, View, Text} from 'react-native';
 
-const MyButton = () => {
+const MyButton = props => {
+    console.log(props)
     return (
         <TouchableOpacity 
-            onPress={() => alert('MyButton Clicked!')}
+            onPress={props.onPress}
             hitSlop={{bottom:10, top:10, left:10, right:10}}
             pressRetentionOffset={{bottom:30, top:30, left:80, righ:80}}>
-            <View style={{backgroundColor: 'yellow', padding: 10}}>
-                <Text style={{fontSize: 20, color: 'blue'}}>MyButton</Text>
+            <View style={{backgroundColor: 'yellow', padding: 10, marginTop:30}}>
+
+                {/* props.chilren이 우선시된다. */}
+                <Text style={{fontSize: 20, color: 'blue'}}>{props.children || props.title}</Text>
+                
             </View>
         </TouchableOpacity>
     );
