@@ -10,7 +10,8 @@ export default function App() {
       <StatusBar style="auto" />
       <MyButton title="test1 Button" onPress ={()=> {alert('test1 Pressed.')}}/>
       <MyButton title="test2 Button" onPress ={()=> {alert('test2 Pressed.')}}>children</MyButton>
-      <MyButton onPress ={()=> {alert('test1 Pressed.')}}>test3 Button</MyButton>
+      <MyButton >test3 Button</MyButton>
+      <MyButton></MyButton>
     </View>
   );
 }
