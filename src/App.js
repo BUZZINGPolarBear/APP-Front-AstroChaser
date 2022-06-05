@@ -1,3 +1,4 @@
+import React, {useState} from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 
@@ -5,13 +6,16 @@ import MyButton from './ButtonTest';
 
 export default function App() {
   console.log("React Native App Started!");
+
+  const [addition, setAddition] = useState(0);
+  const [multiple, setMultiple] = useState(1); 
   return (
     <View style={styles.container}>
       <StatusBar style="auto" />
-      <MyButton title="test1 Button" onPress ={()=> {alert('test1 Pressed.')}}/>
-      <MyButton title="test2 Button" onPress ={()=> {alert('test2 Pressed.')}}>children</MyButton>
-      <MyButton >test3 Button</MyButton>
-      <MyButton></MyButton>
+      <Text style={{fontSize: 20}}>{addition}</Text>
+      <Text style={{fontSize: 20}}>{multiple}</Text>
+      <MyButton title="addition" onPress={() => setAddition(addition + 2)} />
+      <MyButton title="multiple" onPress={() => setMultiple(multiple * 2)} />
     </View>
   );
 }
